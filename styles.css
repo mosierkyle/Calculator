@@ -64,6 +64,10 @@
     align-items: center;
 }
 
+.button :hover {
+    cursor: pointer;
+}
+
 .first3 {
     background-color: rgba(80,80,80,0.7);
 }
