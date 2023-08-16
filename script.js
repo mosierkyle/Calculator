@@ -40,8 +40,11 @@ function division(num1, num2) {
     return (num1) / (num2);
   }
 
-function sign(num) {
-    return num * (-1);
+function sign() {
+  let signNum = Number(resultText.textContent)
+  signNum *= -1 
+  resultText.textContent = String(signNum) 
+  
 }
 
 function percent(num) {
@@ -62,27 +65,39 @@ function ac() {
 function clickNumber(num) {
   let number = String(num);
   if(num1 === undefined) {
+    if(number === '.' && num1.includes('.')) {
+      return
+    }
     num1 = number;
     resultText.textContent = num1;
     return
   }
   if(operator === undefined) {
+    if(number === '.' && num1.includes('.')) {
+      return
+    }
     num1 += number;
     resultText.textContent = num1;
     return
   }
   if(operator !== undefined && num1 !== undefined && num2 === undefined) {
+    if(number === '.' && num2.includes('.')) {
+      return
+    }
     num2 = number;
     resultText.textContent = num2
     return
   }
   if(operator !== undefined && num1 !== undefined && num2 !== undefined) {
+    if(number === '.' && num2.includes('.')) {
+      return
+    }
     num2 += number;
     resultText.textContent = num2
     return
   }
 }
-
+// Number listners
 seven.addEventListener('click', () => clickNumber(7))
 eight.addEventListener('click', () => clickNumber(8))
 nine.addEventListener('click', () => clickNumber(9))
@@ -94,5 +109,6 @@ two.addEventListener('click', () => clickNumber(2))
 three.addEventListener('click', () => clickNumber(3))
 zero.addEventListener('click', () => clickNumber(0))
 decimal.addEventListener('click', () => clickNumber('.'))
-
+// first 3 listners
 acBtn.addEventListener('click', () => ac())
+signBtn.addEventListener('click', () => sign())
