@@ -53,7 +53,10 @@ function calculate() {
 }
 
 function ac() {
-
+    num1 = undefined;
+    num2 = undefined;
+    operator = undefined;
+    resultText.textContent = '0';
 }
 
 function clickNumber(num) {
@@ -91,3 +94,5 @@ two.addEventListener('click', () => clickNumber(2))
 three.addEventListener('click', () => clickNumber(3))
 zero.addEventListener('click', () => clickNumber(0))
 decimal.addEventListener('click', () => clickNumber('.'))
+
+acBtn.addEventListener('click', () => ac())
