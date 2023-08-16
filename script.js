@@ -52,9 +52,15 @@ function sign() {
 
 function percent(num) {
   if(operator === undefined) {
+    if(num1 === undefined) {
+      return
+    }
     num1 /= 100;
     resultText.textContent = num1;
   } else if(operator !== undefined) {
+    if(num2 === undefined) {
+      return
+    }
     num2 /= 100;
     resultText.textContent = num2;
   }
@@ -109,7 +115,6 @@ function clickOperator(calc) {
   } else if(calc === '+') {
     operator = '+'
   }
-  console.log(calc)
 }
 
 function clickNumber(num) {
@@ -170,4 +175,19 @@ multiplicationBtn.addEventListener('click',() => clickOperator('*'))
 subtractionBtn.addEventListener('click',() => clickOperator('-'))
 additionBtn.addEventListener('click',() => clickOperator('+'))
 calculateBtn.addEventListener('click', () => calculate())
-// divisionBtn.style.backgroundColor = 'rgba(255, 170, 51, 0.9)'
+
+
+divisionBtn.addEventListener('mousedown', () => divisionBtn.style.backgroundColor = 'rgba(255, 170, 51, 0.9)')
+divisionBtn.addEventListener('mouseup', () => divisionBtn.style.backgroundColor = 'rgba(255, 149, 0, 0.9)')
+
+multiplicationBtn.addEventListener('mousedown', () => multiplicationBtn.style.backgroundColor = 'rgba(255, 170, 51, 0.9)')
+multiplicationBtn.addEventListener('mouseup', () => multiplicationBtn.style.backgroundColor = 'rgba(255, 149, 0, 0.9)')
+
+subtractionBtn.addEventListener('mousedown', () => subtractionBtn.style.backgroundColor = 'rgba(255, 170, 51, 0.9)')
+subtractionBtn.addEventListener('mouseup', () => subtractionBtn.style.backgroundColor = 'rgba(255, 149, 0, 0.9)')
+
+additionBtn.addEventListener('mousedown', () => additionBtn.style.backgroundColor = 'rgba(255, 170, 51, 0.9)')
+additionBtn.addEventListener('mouseup', () => additionBtn.style.backgroundColor = 'rgba(255, 149, 0, 0.9)')
+
+calculateBtn.addEventListener('mousedown', () => calculateBtn.style.backgroundColor = 'rgba(255, 170, 51, 0.9)')
+calculateBtn.addEventListener('mouseup', () => calculateBtn.style.backgroundColor = 'rgba(255, 149, 0, 0.9)')
