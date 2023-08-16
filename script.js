@@ -61,7 +61,32 @@ function percent(num) {
 }
 
 function calculate() {
-
+  num1 = Number(num1);
+  num2 = Number(num2);
+  if(num1 === undefined || num2 === undefined || operator === undefined) {
+    return
+  }
+  if(operator === '/') {
+    num1 = division(num1,num2);
+    resultText.textContent = num1;
+    operator = undefined;
+    num2 = undefined;
+  } else if(operator === '*') {
+      num1 = multiplication(num1,num2);
+      resultText.textContent = num1;
+      operator = undefined;
+      num2 = undefined;
+  } else if(operator === '-') {
+      num1 = subtraction(num1,num2);
+      resultText.textContent = num1;
+      operator = undefined;
+      num2 = undefined;
+  }  else if(operator === '+') {
+      num1 = addition(num1,num2);
+      resultText.textContent = num1;
+      operator = undefined;
+      num2 = undefined;
+  } 
 }
 
 function ac() {
@@ -84,7 +109,7 @@ function clickOperator(calc) {
   } else if(calc === '+') {
     operator = '+'
   }
-  console.log(operator);
+  console.log(calc)
 }
 
 function clickNumber(num) {
@@ -122,6 +147,7 @@ function clickNumber(num) {
     return
   }
 }
+
 // Number listners
 seven.addEventListener('click', () => clickNumber(7))
 eight.addEventListener('click', () => clickNumber(8))
@@ -143,3 +169,5 @@ divisionBtn.addEventListener('click',() => clickOperator('/'))
 multiplicationBtn.addEventListener('click',() => clickOperator('*'))
 subtractionBtn.addEventListener('click',() => clickOperator('-'))
 additionBtn.addEventListener('click',() => clickOperator('+'))
+calculateBtn.addEventListener('click', () => calculate())
+// divisionBtn.style.backgroundColor = 'rgba(255, 170, 51, 0.9)'
