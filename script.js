@@ -176,7 +176,7 @@ subtractionBtn.addEventListener('click',() => clickOperator('-'))
 additionBtn.addEventListener('click',() => clickOperator('+'))
 calculateBtn.addEventListener('click', () => calculate())
 
-
+//button color of operators on click
 divisionBtn.addEventListener('mousedown', () => divisionBtn.style.backgroundColor = 'rgba(255, 170, 51, 0.9)')
 divisionBtn.addEventListener('mouseup', () => divisionBtn.style.backgroundColor = 'rgba(255, 149, 0, 0.9)')
 
@@ -191,3 +191,37 @@ additionBtn.addEventListener('mouseup', () => additionBtn.style.backgroundColor 
 
 calculateBtn.addEventListener('mousedown', () => calculateBtn.style.backgroundColor = 'rgba(255, 170, 51, 0.9)')
 calculateBtn.addEventListener('mouseup', () => calculateBtn.style.backgroundColor = 'rgba(255, 149, 0, 0.9)')
+
+//button color of numbers on click
+seven.addEventListener('mousedown', () => seven.style.backgroundColor = '#c5c5c5')
+seven.addEventListener('mouseup', () => seven.style.backgroundColor = '#b5b5b4')
+
+eight.addEventListener('mousedown', () => eight.style.backgroundColor = '#c5c5c5')
+eight.addEventListener('mouseup', () => eight.style.backgroundColor = '#b5b5b4')
+
+nine.addEventListener('mousedown', () => nine.style.backgroundColor = '#c5c5c5')
+nine.addEventListener('mouseup', () => nine.style.backgroundColor = '#b5b5b4')
+
+four.addEventListener('mousedown', () => four.style.backgroundColor = '#c5c5c5')
+four.addEventListener('mouseup', () => four.style.backgroundColor = '#b5b5b4')
+
+five.addEventListener('mousedown', () => five.style.backgroundColor = '#c5c5c5')
+five.addEventListener('mouseup', () => five.style.backgroundColor = '#b5b5b4')
+
+six.addEventListener('mousedown', () => six.style.backgroundColor = '#c5c5c5')
+six.addEventListener('mouseup', () => six.style.backgroundColor = '#b5b5b4')
+
+one.addEventListener('mousedown', () => one.style.backgroundColor = '#c5c5c5')
+one.addEventListener('mouseup', () => one.style.backgroundColor = '#b5b5b4')
+
+two.addEventListener('mousedown', () => two.style.backgroundColor = '#c5c5c5')
+two.addEventListener('mouseup', () => two.style.backgroundColor = '#b5b5b4')
+
+three.addEventListener('mousedown', () => three.style.backgroundColor = '#c5c5c5')
+three.addEventListener('mouseup', () => three.style.backgroundColor = '#b5b5b4')
+
+zero.addEventListener('mousedown', () => zero.style.backgroundColor = '#c5c5c5')
+zero.addEventListener('mouseup', () => zero.style.backgroundColor = '#b5b5b4')
+
+decimal.addEventListener('mousedown', () => decimal.style.backgroundColor = '#c5c5c5')
+decimal.addEventListener('mouseup', () => decimal.style.backgroundColor = '#b5b5b4')
