@@ -41,14 +41,23 @@ function division(num1, num2) {
   }
 
 function sign() {
-  let signNum = Number(resultText.textContent)
-  signNum *= -1 
-  resultText.textContent = String(signNum) 
-  
+  if(operator === undefined) {
+    num1 *= -1;
+    resultText.textContent = num1;
+  } else if(operator !== undefined) {
+    num2 += -1;
+    resultText.textContent = num2;
+  }
 }
 
 function percent(num) {
-    return num / 100
+  if(operator === undefined) {
+    num1 /= 100;
+    resultText.textContent = num1;
+  } else if(operator !== undefined) {
+    num2 /= 100;
+    resultText.textContent = num2;
+  }
 }
 
 function calculate() {
@@ -60,6 +69,22 @@ function ac() {
     num2 = undefined;
     operator = undefined;
     resultText.textContent = '0';
+}
+
+function clickOperator(calc) {
+  if(num1 === undefined) {
+    return
+  }
+  if(calc === '/') {
+    operator = '/';
+  } else if(calc === '*') {
+    operator = '*';
+  } else if(calc === '-') {
+    operator = '-';
+  } else if(calc === '+') {
+    operator = '+'
+  }
+  console.log(operator);
 }
 
 function clickNumber(num) {
@@ -112,3 +137,9 @@ decimal.addEventListener('click', () => clickNumber('.'))
 // first 3 listners
 acBtn.addEventListener('click', () => ac())
 signBtn.addEventListener('click', () => sign())
+percentBtn.addEventListener('click',() => percent())
+// operators 
+divisionBtn.addEventListener('click',() => clickOperator('/'))
+multiplicationBtn.addEventListener('click',() => clickOperator('*'))
+subtractionBtn.addEventListener('click',() => clickOperator('-'))
+additionBtn.addEventListener('click',() => clickOperator('+'))
